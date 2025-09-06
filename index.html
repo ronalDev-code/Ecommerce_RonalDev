@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RonalDev - Software y Páginas Web</title>
+    <!-- Favicon básico -->
+    <link rel="icon" type="image/x-icon" href="favicon_io/favicon.ico" />
+
+    <!-- PNG Favicons -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="favicon_io/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="favicon_io/favicon-16x16.png"
+    />
+
+    <!-- Apple Touch Icon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="favicon_io/apple-touch-icon.png"
+    />
+
+    <!-- Android/Chrome -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="favicon_io/android-chrome-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="favicon_io/android-chrome-512x512.png"
+    />
+
+    <!-- Windows Tiles -->
+    <meta name="msapplication-TileColor" content="#667eea" />
+    <meta name="theme-color" content="#667eea" />
+<!-- Tipografía: Montserrat (títulos) + Open Sans (textos) -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+   <!-- Header -->
+<header>
+  <nav class="container">
+    <!-- Logo -->
+    <div class="logo">
+      <div class="logo-icon">RD</div>
+      <span>RonalDev</span>
+    </div>
+
+    <!-- Menú -->
+    <ul class="nav-links">
+      <li><a href="#productos">Productos</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+
+    <!-- Botón Carrito -->
+    <button class="cart-btn" onclick="openCart()">
+      Carrito <span class="cart-count" id="cartCount">0</span>
+    </button>
+
+    <!-- Botón hamburguesa (solo móvil) -->
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+  </nav>
+</header>
+
+
+    <!-- Hero -->
+    <main>
+      <section class="hero">
+        <div class="container">
+          <h1>Soluciones Digitales Profesionales</h1>
+          <p>
+            Innovación en páginas web, e-commerce y software diseñado para tu empresa.
+          </p>
+        </div>
+      </section>
+
+      <!-- Productos -->
+      <section class="products" id="productos">
+        <div class="container">
+          <h2 class="section-title">Nuestros Productos</h2>
+          <div class="product-grid">
+            <div class="product-card">
+              <div class="product-header">
+                <div class="product-title">Página Web Básica</div>
+                <div class="product-price">S/ 350</div>
+              </div>
+              <div class="product-content">
+                <p class="product-description">
+                  Página web profesional con diseño moderno y responsivo
+                </p>
+                <ul class="features">
+                  <li>Diseño responsivo</li>
+                  <li>Hasta 5 páginas</li>
+                  <li>Formulario de contacto</li>
+                  <li>Optimización SEO básica</li>
+                  <li>Soporte técnico básico</li>
+                </ul>
+                <button
+                  class="btn-primary"
+                  onclick="addToCart('Página Web Básica',350)"
+                >
+                  Agregar al Carrito
+                </button>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-header">
+                <div class="product-title">Página Web Premium</div>
+                <div class="product-price">S/ 600</div>
+              </div>
+              <div class="product-content">
+                <p class="product-description">
+                  Sitio web completo con funcionalidades avanzadas
+                </p>
+                <ul class="features">
+                  <li>Diseño personalizado</li>
+                  <li>Hasta 10 páginas</li>
+                  <li>Blog integrado</li>
+                  <li>Panel de administración</li>
+                  <li>SEO avanzado</li>
+                  <li>Integración redes sociales</li>
+                </ul>
+                <button
+                  class="btn-primary"
+                  onclick="addToCart('Página Web Premium',600)"
+                >
+                  Agregar al Carrito
+                </button>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-header">
+                <div class="product-title">E-commerce</div>
+                <div class="product-price">S/ 950</div>
+              </div>
+              <div class="product-content">
+                <p class="product-description">
+                  Tienda online completa para vender tus productos
+                </p>
+                <ul class="features">
+                  <li>Catálogo de productos</li>
+                  <li>Carrito de compras</li>
+                  <li>Pasarela de pagos</li>
+                  <li>Gestión de inventario</li>
+                  <li>Reportes de ventas</li>
+                </ul>
+                <button
+                  class="btn-primary"
+                  onclick="addToCart('E-commerce',950)"
+                >
+                  Agregar al Carrito
+                </button>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-header">
+                <div class="product-title">Programas para PC</div>
+                <div class="product-price">Desde S/ 30</div>
+              </div>
+              <div class="product-content">
+                <p class="product-description">
+                  Software especializado para computadoras y laptops
+                </p>
+                <ul class="features">
+                  <li>Programas de gestión</li>
+                  <li>Software de inventario</li>
+                  <li>Sistemas de facturación</li>
+                  <li>Herramientas de productividad</li>
+                </ul>
+                <button
+                  class="btn-primary"
+                  onclick="addToCart('Programas para PC',30)"
+                >
+                  Agregar al Carrito
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Servicios -->
+      <section class="products" id="servicios">
+        <div class="container">
+          <h2 class="section-title">Nuestros Servicios</h2>
+          <div class="product-grid">
+            <div class="product-card">
+              <div class="product-header">
+                <div class="product-title">Desarrollo de Software</div>
+              </div>
+              <div class="product-content">
+                <p class="product-description">
+                  Creamos sistemas personalizados para empresas y negocios.
+                </p>
+                <ul class="features">
+                  <li>Sistemas de gestión</li>
+                  <li>Automatización de procesos</li>
+                  <li>Aplicaciones a medida</li>
+                </ul>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-header">
+                <div class="product-title">Mantenimiento Web</div>
+              </div>
+              <div class="product-content">
+                <p class="product-description">
+                  Soporte y optimización de sitios web existentes.
+                </p>
+                <ul class="features">
+                  <li>Actualización de contenidos</li>
+                  <li>Mejoras en seguridad</li>
+                  <li>Optimización de velocidad</li>
+                </ul>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-header">
+                <div class="product-title">Marketing Digital</div>
+              </div>
+              <div class="product-content">
+                <p class="product-description">
+                  Aumenta la visibilidad de tu marca en internet.
+                </p>
+                <ul class="features">
+                  <li>SEO y posicionamiento</li>
+                  <li>Publicidad online</li>
+                  <li>Gestión de redes sociales</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contacto -->
+<section class="products" id="contacto">
+  <div class="container">
+    <h2 class="section-title">Contáctanos</h2>
+    <form
+      id="contactForm"
+      action="https://formspree.io/f/mqadgwbz"
+      method="POST"
+      style="max-width: 600px; margin: 0 auto"
+    >
+      <input type="hidden" name="_redirect" value="#contacto" />
+
+      <label for="name">Nombre</label>
+      <input type="text" id="name" name="name" required />
+      <span id="error-name" class="error-message"></span>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required />
+      <span id="error-email" class="error-message"></span>
+
+      <label for="message">Mensaje</label>
+      <textarea
+        id="message"
+        name="message"
+        rows="5"
+        required
+        style="resize: none"
+      ></textarea>
+      <span id="error-message" class="error-message"></span>
+
+      <div
+        class="form-buttons"
+        style="display: flex; gap: 1rem; margin-top: 1rem"
+      >
+        <button
+          type="button"
+          class="btn-primary"
+          onclick="contactWhatsApp()"
+        >
+          Enviar por WhatsApp
+        </button>
+        <button type="submit" class="btn-primary">
+          Enviar por Email
+        </button>
+      </div>
+    </form>
+  </div>
+</section>
+
+
+<!-- Modal Carrito -->
+<div id="cartModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeCart()">&times;</span>
+    <h2>Carrito de Compras</h2>
+    <div id="cartItems">
+      <div class="empty-cart"><p>Tu carrito está vacío</p></div>
+    </div>
+    <div class="cart-total" id="cartTotal">Total: S/ 0</div>
+
+    <!-- ⚡ Botón y aviso -->
+    <div class="cart-footer">
+      <button onclick="sendCartWhatsApp()" class="btn-primary" style="width:100%;">
+        🛒 Enviar pedido por WhatsApp
+      </button>
+      <p style="font-size:0.9rem; color:#555; margin-top:1rem; text-align:center;">
+        Al realizar la compra aceptas nuestras 
+        <a href="condiciones.html" target="_blank" style="color:#667eea; text-decoration:underline;">
+          Condiciones de Servicio
+        </a>.
+      </p>
+    </div>
+  </div>
+</div>
+
+
+    
+
+  <footer>
+  <div class="container">
+    <p>&copy; 2025 RonalDev. Todos los derechos reservados.</p>
+    <p>
+      <!-- Correo -->
+<a href="mailto:ronaldcode01@gmail.com?subject=Consulta%20de%20servicios%20-%20RonalDev&body=Estimado%20equipo%20de%20RonalDev,%0A%0AEstoy%20interesado(a)%20en%20recibir%20más%20información%20sobre%20sus%20servicios%20digitales.%20Por%20favor,%20cont%C3%A1ctenme%20a%20la%20brevedad.%0A%0AAtentamente,%0A[Su%20Nombre]%0ATel%C3%A9fono:%20[Su%20n%C3%BAmero]" 
+   target="_blank" 
+   style="color:#fff; text-decoration:underline;">
+   ✉️ ronaldcode01@gmail.com
+</a>
+
+      |
+      <!-- WhatsApp -->
+      <a href="https://wa.me/51960334494?text=Hola%20RonalDev,%20quiero%20más%20información%20sobre%20sus%20servicios." 
+         target="_blank" 
+         style="color:#fff; text-decoration:underline;">
+        💬 WhatsApp: +51 960 334 494
+      </a>
+      |
+      <!-- Condiciones -->
+      <a href="condiciones.html" target="_blank" style="color:#fff; text-decoration:underline;">
+        📄 Condiciones de Uso
+      </a>
+    </p>
+  </div>
+</footer>
+
+
+    <script src="scripts.js"></script>
+  </body>
+</html>
