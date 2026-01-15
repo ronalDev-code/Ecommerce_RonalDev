@@ -1,132 +1,614 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Condiciones de Servicio - RonalDev</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header>
-      <h1>Condiciones de Servicio</h1>
-    </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Condiciones de Servicio - RonalDev</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-    <main class="container">
-      <section>
-        <h2>1. Alcance de los Servicios</h2>
-        <p>
-          RonalDev ofrece soluciones digitales, incluyendo software
-          personalizado y páginas web, orientadas a profesionales, empresas y
-          emprendedores. Cada producto o servicio adquirido incluye únicamente
-          las características descritas en su ficha de compra.
-        </p>
-      </section>
+    body {
+      font-family: "Open Sans", sans-serif;
+      line-height: 1.8;
+      color: #2d3748;
+      background: #f7fafc;
+    }
 
-      <section>
-        <h2>2. Entregas</h2>
-        <p>
-          Los plazos de entrega serán acordados previamente con el cliente y
-          dependerán de la complejidad del proyecto. Se entregará el producto en
-          formato digital (archivos, accesos o links), salvo que se acuerde lo
-          contrario.
-        </p>
-      </section>
+    header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 3rem 0;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
 
-      <section>
-        <h2>3. Soporte Técnico y Mantenimiento</h2>
-        <p>
-          Algunos de nuestros productos incluyen soporte técnico, lo cual estará
-          indicado en la descripción al momento de la compra.
-        </p>
+    header h1 {
+      font-family: "Montserrat", sans-serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      opacity: 0.95;
+    }
+
+    .btn-back {
+      display: inline-block;
+      background: rgba(255,255,255,0.2);
+      backdrop-filter: blur(10px);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-top: 1rem;
+      border: 2px solid white;
+      transition: all 0.3s;
+    }
+
+    .btn-back:hover {
+      background: white;
+      color: #667eea;
+      transform: translateY(-2px);
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    main {
+      background: white;
+      margin: 3rem auto;
+      padding: 3rem;
+      border-radius: 15px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+      max-width: 900px;
+    }
+
+    section {
+      margin-bottom: 2.5rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    section:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+
+    section h2 {
+      font-family: "Montserrat", sans-serif;
+      color: #667eea;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    section h2::before {
+      content: "📋";
+      font-size: 1.5rem;
+    }
+
+    section p {
+      color: #4a5568;
+      margin-bottom: 1rem;
+      text-align: justify;
+    }
+
+    ul {
+      list-style: none;
+      margin-left: 0;
+      margin-top: 1rem;
+    }
+
+    ul li {
+      padding: 0.5rem 0 0.5rem 2rem;
+      position: relative;
+      color: #4a5568;
+    }
+
+    ul li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #48bb78;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    .highlight-box {
+      background: linear-gradient(135deg, #e6fffa 0%, #f0fff4 100%);
+      border-left: 4px solid #48bb78;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 8px;
+    }
+
+    .highlight-box h3 {
+      color: #2f855a;
+      margin-bottom: 1rem;
+      font-family: "Montserrat", sans-serif;
+    }
+
+    .warning-box {
+      background: #fff3cd;
+      border-left: 4px solid #ffc107;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 8px;
+    }
+
+    .warning-box h3 {
+      color: #d97706;
+      margin-bottom: 1rem;
+      font-family: "Montserrat", sans-serif;
+    }
+
+    .contact-section {
+      background: linear-gradient(135deg, #f7fafc 0%, #e6fffa 100%);
+      padding: 2rem;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .contact-section h2 {
+      justify-content: center;
+    }
+
+    .contact-links {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: white;
+      padding: 1rem 1.5rem;
+      border-radius: 10px;
+      text-decoration: none;
+      color: #2d3748;
+      transition: all 0.3s;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .contact-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 20px rgba(102, 126, 234, 0.3);
+      color: #667eea;
+    }
+
+    footer {
+      background: #2d3748;
+      color: white;
+      text-align: center;
+      padding: 2rem 0;
+      margin-top: 3rem;
+    }
+
+    footer a {
+      color: #90cdf4;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    .support-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .support-table th,
+    .support-table td {
+      padding: 1rem;
+      text-align: left;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .support-table th {
+      background: #667eea;
+      color: white;
+      font-weight: 600;
+    }
+
+    .support-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .support-table tr:hover {
+      background: #f7fafc;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      main {
+        padding: 2rem 1.5rem;
+        margin: 2rem 1rem;
+      }
+
+      section h2 {
+        font-size: 1.5rem;
+      }
+
+      .contact-links {
+        flex-direction: column;
+        align-items: stretch;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>📄 Condiciones de Servicio</h1>
+      <p>Términos claros y transparentes para nuestros clientes</p>
+      <a href="index.html" class="btn-back">← Volver al Inicio</a>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <h2>1. Alcance de los Servicios</h2>
+      <p>
+        RonalDev ofrece soluciones digitales profesionales, incluyendo:
+      </p>
+      <ul>
+        <li>Páginas web (básicas y premium)</li>
+        <li>E-commerce completos</li>
+        <li>Sistemas de gestión empresarial (Gimnasios, Veterinarias, Salones de Billar, etc.)</li>
+        <li>Software personalizado según necesidades del cliente</li>
+      </ul>
+      <p>
+        Cada producto o servicio adquirido incluye <strong>únicamente las características 
+        descritas en su ficha de compra</strong>. Cualquier funcionalidad adicional no 
+        especificada deberá cotizarse como proyecto independiente.
+      </p>
+    </section>
+
+    <section>
+      <h2>2. Entregas y Plazos</h2>
+      <p>
+        Los plazos de entrega serán acordados previamente con el cliente según la 
+        complejidad del proyecto solicitado. Los tiempos estimados son:
+      </p>
+      <table class="support-table">
+        <thead>
+          <tr>
+            <th>Tipo de Proyecto</th>
+            <th>Tiempo Estimado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Página Web Básica</td>
+            <td>7 - 10 días hábiles</td>
+          </tr>
+          <tr>
+            <td>Página Web Premium</td>
+            <td>15 - 20 días hábiles</td>
+          </tr>
+          <tr>
+            <td>E-commerce Completo</td>
+            <td>20 - 30 días hábiles</td>
+          </tr>
+          <tr>
+            <td>Sistema de Gestión (Gym, Veterinaria, Billar)</td>
+            <td>30 - 45 días hábiles</td>
+          </tr>
+          <tr>
+            <td>Software Personalizado</td>
+            <td>Según especificaciones (se informa al cotizar)</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        El proyecto se entregará en formato digital: <strong>código fuente completo, archivos, 
+        accesos web o repositorio de código</strong>, salvo que se acuerde un método de entrega diferente.
+      </p>
+    </section>
+
+    <section>
+      <h2>3. Soporte Técnico y Alcance Post-Entrega</h2>
+      
+      <p>
+        Nuestros productos incluyen soporte técnico <strong>limitado y temporal</strong> según 
+        lo especificado en cada paquete. <strong>NO ofrecemos planes de mantenimiento mensual</strong>.
+      </p>
+
+      <div class="highlight-box">
+        <h3>✅ El soporte técnico SÍ incluye:</h3>
         <ul>
-          <li>
-            ⏱️ La duración del soporte gratuito será la indicada en el producto
-            adquirido.
-          </li>
-          <li>
-            📌 El soporte incluye consultas básicas, solución de errores y
-            orientación en el uso del software o la página web.
-          </li>
-          <li>
-            ⚠️ El soporte no incluye modificaciones adicionales, rediseños ni
-            desarrollo de nuevas funcionalidades.
-          </li>
-          <li>
-            🛠️ Finalizado el periodo de soporte gratuito, el cliente podrá
-            contratar planes de mantenimiento opcionales.
-          </li>
+          <li><strong>Corrección de errores (bugs)</strong> del código original entregado</li>
+          <li><strong>Asistencia en el despliegue inicial</strong> (deployment/publicación)</li>
+          <li><strong>Resolución de problemas técnicos</strong> no causados por modificaciones del cliente</li>
+          <li><strong>Problemas de compatibilidad</strong> de navegadores o dispositivos</li>
+          <li><strong>1 sesión de capacitación</strong> sobre el uso del sistema entregado</li>
+          <li><strong>Consultas técnicas básicas</strong> durante el periodo de soporte</li>
+          <li><strong>Entrega del código fuente completo y documentado</strong></li>
         </ul>
-      </section>
+      </div>
 
-      <section>
-        <h2>4. Responsabilidades del Cliente</h2>
+      <div class="warning-box">
+        <h3>❌ El soporte técnico NO incluye:</h3>
         <ul>
-          <li>
-            El cliente debe proporcionar información precisa y completa para el
-            desarrollo del producto.
-          </li>
-          <li>
-            El cliente es responsable de mantener seguros los accesos y
-            credenciales entregados.
-          </li>
-          <li>
-            El cliente se compromete a utilizar los productos conforme a la ley
-            y a los fines descritos.
-          </li>
+          <li>Cambios en el diseño visual (colores, fuentes, layouts, imágenes)</li>
+          <li>Adición de nuevas funcionalidades no contempladas originalmente</li>
+          <li>Modificaciones de contenido (textos, imágenes, videos, productos)</li>
+          <li>Corrección de errores causados por modificaciones del cliente o terceros</li>
+          <li>Gestión de hosting, dominio o servidores (responsabilidad del cliente)</li>
+          <li>Capacitaciones adicionales más allá de la sesión incluida</li>
+          <li>Planes de mantenimiento mensual</li>
+          <li>Cambios solicitados después del periodo de soporte</li>
         </ul>
-      </section>
+      </div>
 
-      <section>
-        <h2>5. Pagos y Facturación</h2>
-        <p>
-          Todos los pagos deben realizarse según lo acordado antes de la entrega
-          del producto. No se realizarán devoluciones una vez entregado el
-          software o página web, salvo casos de incumplimiento comprobado por
-          parte de RonalDev.
-        </p>
-      </section>
+      <table class="support-table">
+        <thead>
+          <tr>
+            <th>Producto</th>
+            <th>Soporte Post-Entrega</th>
+            <th>¿Qué incluye?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Página Web Básica</td>
+            <td>15 días</td>
+            <td>Bugs + 1 capacitación</td>
+          </tr>
+          <tr>
+            <td>Página Web Premium</td>
+            <td>30 días</td>
+            <td>Bugs + 1 capacitación</td>
+          </tr>
+          <tr>
+            <td>E-commerce Completo</td>
+            <td>30 días</td>
+            <td>Bugs + 1 capacitación</td>
+          </tr>
+          <tr>
+            <td>Sistema de Gestión (Gym/Veterinaria/Billar)</td>
+            <td>30 días</td>
+            <td>Bugs + 1 capacitación completa</td>
+          </tr>
+          <tr>
+            <td>Software Personalizado</td>
+            <td>Según cotización</td>
+            <td>Se especifica en contrato</td>
+          </tr>
+        </tbody>
+      </table>
 
-      <section>
-        <h2>6. Propiedad Intelectual</h2>
-        <p>
-          El código y diseño desarrollado por RonalDev es propiedad intelectual
-          de la empresa hasta que el pago total haya sido completado. Una vez
-          recibido el pago, los derechos de uso pasan al cliente, salvo que se
-          indique lo contrario.
-        </p>
-      </section>
+      <p style="background:#fff3cd; padding:1rem; border-radius:8px; margin-top:1rem; border-left: 4px solid #ffc107;">
+        <strong>⚠️ IMPORTANTE:</strong> Finalizado el periodo de soporte gratuito, 
+        cualquier cambio, mejora o corrección adicional se cotizará como <strong>trabajo 
+        independiente</strong> y requerirá un nuevo presupuesto. <strong>NO ofrecemos 
+        mantenimiento mensual</strong> para evitar malentendidos sobre el alcance del servicio.
+      </p>
+    </section>
 
-      <section>
-        <h2>7. Contacto</h2>
+    <section>
+      <h2>4. Responsabilidades del Cliente</h2>
+      <ul>
+        <li>Proporcionar información <strong>precisa, completa y oportuna</strong> para el desarrollo del producto</li>
+        <li>Facilitar accesos necesarios (hosting, cuentas, credenciales) cuando el proyecto lo requiera</li>
+        <li>Mantener seguros los accesos y credenciales entregados por RonalDev</li>
+        <li>Utilizar los productos conforme a la ley y a los fines descritos en el proyecto</li>
+        <li>Realizar respaldos periódicos de la información y base de datos</li>
+        <li>Notificar cualquier problema técnico <strong>dentro del periodo de soporte</strong></li>
+        <li>Aprobar diseños, mockups y avances en los plazos acordados</li>
+        <li><strong>Leer y aceptar estas condiciones antes de realizar el pago</strong></li>
+      </ul>
+      <p style="margin-top:1rem;">
+        <strong>Nota:</strong> Retrasos en la entrega de información por parte del cliente 
+        pueden extender los plazos de entrega del proyecto. Si el cliente comete errores 
+        de usuario o modifica el código después de la entrega, <strong>RonalDev no se hace 
+        responsable</strong> de los problemas derivados.
+      </p>
+    </section>
+
+    <section>
+      <h2>5. Pagos y Facturación</h2>
+      <p>
+        Todos los pagos deben realizarse según lo acordado y <strong>antes de la entrega 
+        final del producto</strong>. Las modalidades de pago aceptadas son:
+      </p>
+      <ul>
+        <li>Transferencia bancaria (BCP, Interbank, BBVA)</li>
+        <li>Yape / Plin</li>
+        <li>Depósito en cuenta</li>
+        <li>Otros medios acordados previamente</li>
+      </ul>
+      
+      <div class="warning-box">
+        <h3>⚠️ Política de Devoluciones</h3>
         <p>
-          Para consultas adicionales, el cliente puede contactarnos a través de:
+          <strong>NO se realizarán devoluciones</strong> una vez que el software, página 
+          web o sistema haya sido entregado y el código fuente compartido con el cliente, 
+          salvo casos de <strong>incumplimiento comprobado</strong> por parte de RonalDev 
+          respecto a las especificaciones acordadas contractualmente.
         </p>
+      </div>
+
+      <p>
+        Para proyectos de mayor envergadura (sistemas de gestión, e-commerce complejos), 
+        se podrá establecer un esquema de pagos parciales:
+      </p>
+      <ul>
+        <li><strong>50% de anticipo</strong> para iniciar el desarrollo</li>
+        <li><strong>50% restante</strong> al finalizar y antes de la entrega del código fuente</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>6. Propiedad Intelectual y Código Fuente</h2>
+      <p>
+        El código fuente y diseño desarrollado por RonalDev es <strong>propiedad 
+        intelectual de la empresa</strong> hasta que el pago total del proyecto 
+        haya sido completado.
+      </p>
+      <p>
+        Una vez recibido el <strong>pago completo (100%)</strong>, los derechos de uso 
+        del código pasan al cliente, quien podrá:
+      </p>
+      <ul>
+        <li>Utilizar el código para los fines acordados en el proyecto</li>
+        <li>Modificar el código según sus necesidades</li>
+        <li>Contratar a terceros para realizar cambios (bajo su responsabilidad)</li>
+        <li>Gestionar y mantener el sistema de forma independiente</li>
+      </ul>
+
+      <div class="highlight-box">
+        <h3>📦 Entrega del Código Fuente</h3>
+        <p>
+          En <strong>TODOS</strong> nuestros productos (desde Página Web Básica hasta 
+          Sistemas de Gestión), el cliente recibe el <strong>código fuente completo, 
+          documentado y sin restricciones</strong>. Esto te otorga total independencia 
+          tecnológica y libertad para modificar o ampliar el proyecto en el futuro.
+        </p>
+      </div>
+
+      <p style="margin-top:1rem; background:#f0fff4; padding:1rem; border-radius:8px; border-left: 4px solid #48bb78;">
+        <strong>💡 Ventaja:</strong> A diferencia de otros proveedores que retienen el código 
+        o cobran mantenimientos mensuales obligatorios, en RonalDev recibes el código completo 
+        y decides tú mismo cómo gestionarlo.
+      </p>
+
+      <p style="margin-top:1rem;">
+        <strong>Restricciones:</strong> El cliente no podrá revender, redistribuir 
+        o comercializar el código como producto propio sin autorización expresa de RonalDev.
+      </p>
+    </section>
+
+    <section>
+      <h2>7. Modificaciones y Proyectos Adicionales</h2>
+      <p>
+        Cualquier solicitud de cambio, mejora o nueva funcionalidad que no esté 
+        contemplada en el alcance original del proyecto será considerada como 
+        <strong>trabajo adicional</strong> y requerirá:
+      </p>
+      <ul>
+        <li>Cotización independiente según complejidad y tiempo estimado</li>
+        <li>Nuevo acuerdo de plazos de entrega</li>
+        <li>Pago previo (50% anticipo) antes de iniciar el desarrollo</li>
+      </ul>
+
+      <div class="highlight-box">
+        <h3>🔧 Ejemplos de Trabajos Adicionales (Se Cotizan Aparte)</h3>
         <ul>
-          <li>
-            ✉️ Correo:
-            <a
-              href="mailto:ronaldcode01@gmail.com"
-              style="color: #333; text-decoration: underline"
-            >
-              ronaldcode01@gmail.com
-            </a>
-          </li>
-          <li>
-            📱 WhatsApp:
-            <a
-              href="https://wa.me/51960334494"
-              target="_blank"
-              style="color: #333; text-decoration: underline"
-            >
-              +51 960 334 494
-            </a>
-          </li>
+          <li>Cambiar colores, fuentes o diseño después de la entrega</li>
+          <li>Agregar nuevas páginas o secciones no contempladas</li>
+          <li>Implementar nuevas funcionalidades (ej: chat en vivo, pasarela de pagos adicional)</li>
+          <li>Integración con sistemas de terceros</li>
+          <li>Migración a otro servidor o hosting</li>
+          <li>Corrección de errores causados por modificaciones del cliente</li>
+          <li>Capacitaciones adicionales (después de la primera)</li>
         </ul>
-      </section>
-    </main>
+      </div>
 
-    <footer>
+      <p style="background:#fff3cd; padding:1rem; border-radius:8px; margin-top:1rem; border-left: 4px solid #ffc107;">
+        <strong>💡 Recomendación:</strong> Para evitar costos adicionales, es fundamental 
+        definir claramente <strong>TODOS los requerimientos</strong> desde el inicio del 
+        proyecto. Cambios constantes después de la entrega generarán costos adicionales.
+      </p>
+    </section>
+
+    <section>
+      <h2>8. Limitación de Responsabilidad</h2>
+      <p>
+        RonalDev no se hace responsable por:
+      </p>
+      <ul>
+        <li>Pérdida de datos causada por errores del cliente, terceros o falta de respaldos</li>
+        <li>Problemas derivados de modificaciones no autorizadas al código</li>
+        <li>Caídas del servicio por problemas de hosting, dominio o infraestructura del cliente</li>
+        <li>Uso indebido, ilegal o no autorizado de los productos entregados</li>
+        <li>Daños indirectos, lucro cesante o pérdidas comerciales</li>
+        <li>Errores de usuario o falta de capacitación del personal del cliente</li>
+        <li>Incompatibilidad con software de terceros instalado después de la entrega</li>
+      </ul>
+
+      <p style="margin-top:1rem;">
+        <strong>Importante:</strong> Una vez entregado el código fuente y finalizado el 
+        periodo de soporte, el cliente es responsable del mantenimiento, actualización 
+        y correcto uso del sistema.
+      </p>
+    </section>
+
+    <section class="contact-section">
+      <h2>9. Contacto y Soporte</h2>
+      <p>
+        Para consultas, cotizaciones o soporte técnico (dentro del periodo incluido), 
+        el cliente puede contactarnos a través de:
+      </p>
+
+      <div class="contact-links">
+        <a href="mailto:ronaldcode01@gmail.com?subject=Consulta%20de%20servicios%20-%20RonalDev" 
+           class="contact-item" target="_blank">
+          <span style="font-size:1.5rem;">✉️</span>
+          <div>
+            <strong>Email</strong><br>
+            ronaldcode01@gmail.com
+          </div>
+        </a>
+
+        <a href="https://wa.me/51960334494?text=Hola%20RonalDev,%20necesito%20información" 
+           class="contact-item" target="_blank">
+          <span style="font-size:1.5rem;">💬</span>
+          <div>
+            <strong>WhatsApp</strong><br>
+            +51 960 334 494
+          </div>
+        </a>
+      </div>
+
+      <p style="margin-top:2rem; color:#4a5568;">
+        <strong>Horario de atención:</strong> Lunes a Viernes, 9:00 AM - 6:00 PM (GMT-5)
+      </p>
+    </section>
+
+    <section style="border:none; background:#f7fafc; padding:2rem; border-radius:10px; text-align:center;">
+      <p style="font-size:0.95rem; color:#4a5568;">
+        <strong>Última actualización:</strong> Enero 2025<br><br>
+        Al contratar nuestros servicios o realizar una compra, el cliente declara haber leído, 
+        comprendido y aceptado <strong>todos los términos</strong> establecidos en este documento.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
       <p>&copy; 2025 RonalDev. Todos los derechos reservados.</p>
-    </footer>
-  </body>
+      <p style="margin-top:0.5rem;">
+        <a href="index.html">Volver al Sitio Principal</a>
+      </p>
+    </div>
+  </footer>
+</body>
 </html>
