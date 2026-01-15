@@ -136,10 +136,30 @@ nav {
 .section-title {
   text-align: center;
   font-size: 2.5rem;
-  margin-bottom: 3rem;
+  margin-bottom: 1.5rem;
   color: #2d3748;
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
+}
+
+.systems-description {
+  text-align: center;
+  color: #666;
+  margin-bottom: 2rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1rem;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .systems-description {
+    font-size: 0.95rem;
+    max-width: 100%;
+    padding: 0 1.5rem;
+  }
 }
 
 .product-grid {
@@ -176,7 +196,7 @@ nav {
   box-shadow: 0 20px 40px rgba(72, 187, 120, 0.3);
 }
 
-/* 🏷️ Badge "NUEVO" */
+/* 🏷️ Badge "NUEVO" - Posición mejorada */
 .product-badge {
   position: absolute;
   top: 15px;
@@ -185,11 +205,22 @@ nav {
   color: white;
   padding: 6px 14px;
   border-radius: 20px;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-weight: bold;
-  z-index: 10;
+  z-index: 5;
   animation: pulseBadge 2s infinite;
   box-shadow: 0 4px 10px rgba(255, 107, 107, 0.4);
+  pointer-events: none;
+}
+
+/* Ajuste para que no tape el título en móviles */
+@media (max-width: 480px) {
+  .product-badge {
+    top: 10px;
+    right: 10px;
+    padding: 4px 10px;
+    font-size: 0.65rem;
+  }
 }
 
 @keyframes pulseBadge {
@@ -205,6 +236,11 @@ nav {
   padding: 1.5rem;
   background: linear-gradient(135deg, #667eea, #764ba2);
   color: white;
+  position: relative;
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .product-card.featured .product-header {
@@ -216,12 +252,15 @@ nav {
   font-weight: bold;
   margin-bottom: 0.5rem;
   font-family: "Montserrat", sans-serif;
+  padding-right: 80px;
+  line-height: 1.3;
 }
 
 .product-price {
   font-size: 2rem;
   font-weight: bold;
   color: #ffd700;
+  margin-top: 0.5rem;
 }
 
 .product-content {
@@ -435,7 +474,7 @@ form textarea {
   cursor: pointer;
 }
 
-/* 📱 RESPONSIVE */
+/* 📱 RESPONSIVE COMPLETO */
 @media (max-width: 768px) {
   .nav-links {
     display: none;
@@ -448,6 +487,7 @@ form textarea {
     padding: 1rem;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
+    z-index: 200;
   }
 
   .nav-links.active {
@@ -478,22 +518,107 @@ form textarea {
 
   .hero h1 {
     font-size: 2rem;
+    padding: 0 1rem;
   }
 
   .hero p {
     font-size: 1rem;
+    padding: 0 1rem;
   }
 
   .section-title {
     font-size: 2rem;
+    padding: 0 1rem;
   }
 
   .product-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
+    padding: 0 1rem;
   }
 
   .form-buttons {
     flex-direction: column;
+  }
+
+  /* Ajuste de tarjetas en móvil */
+  .product-card {
+    margin: 0 auto;
+    max-width: 100%;
+  }
+
+  .product-title {
+    font-size: 1.3rem;
+    padding-right: 50px;
+  }
+
+  .product-price {
+    font-size: 1.8rem;
+  }
+
+  /* Ajuste del modal en móvil */
+  .modal-content {
+    margin: 10% auto;
+    padding: 1.5rem;
+    width: 90%;
+    max-width: 90%;
+  }
+
+  /* Footer responsive */
+  footer p {
+    font-size: 0.85rem;
+    line-height: 1.8;
+  }
+}
+
+/* 📱 RESPONSIVE EXTRA PARA MÓVILES PEQUEÑOS */
+@media (max-width: 480px) {
+  .logo {
+    font-size: 1.5rem;
+  }
+
+  .logo-icon {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .product-grid {
+    gap: 1rem;
+  }
+
+  .product-header {
+    padding: 1.2rem;
+  }
+
+  .product-content {
+    padding: 1.2rem;
+  }
+
+  .features li {
+    font-size: 0.9rem;
+  }
+
+  .btn-primary {
+    font-size: 1rem;
+    padding: 0.9rem;
+  }
+
+  form label {
+    font-size: 0.95rem;
+  }
+
+  form input,
+  form textarea {
+    font-size: 0.95rem;
+    padding: 0.7rem;
   }
 }
